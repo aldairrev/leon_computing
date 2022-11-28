@@ -83,6 +83,24 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Course\CourseCreate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Course\CourseCreate.Designer.cs">
+      <DependentUpon>CourseCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PartnerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PartnerForm.Designer.cs">
+      <DependentUpon>PartnerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CourseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CourseForm.Designer.cs">
+      <DependentUpon>CourseForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Business\BusinessCreate.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -109,6 +127,15 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Course\CourseCreate.resx">
+      <DependentUpon>CourseCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PartnerForm.resx">
+      <DependentUpon>PartnerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CourseForm.resx">
+      <DependentUpon>CourseForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="BusinessForm.resx">
       <DependentUpon>BusinessForm.cs</DependentUpon>
     </EmbeddedResource>

@@ -78,6 +78,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AuthADO.cs" />
+    <Compile Include="CourseADO.cs" />
     <Compile Include="BusinessADO.cs" />
     <Compile Include="Connection.cs" />
     <Compile Include="Encrypt.cs" />

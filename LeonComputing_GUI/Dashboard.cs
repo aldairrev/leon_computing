@@ -93,5 +93,13 @@ namespace LeonComputing_GUI
             f1.ShowDialog();
             Close();
         }
+
+        private void coursesBtn_Click(object sender, EventArgs e)
+        {
+            CourseForm f1 = new CourseForm();
+            Hide();
+            f1.ShowDialog();
+            Close();
+        }
     }
 }

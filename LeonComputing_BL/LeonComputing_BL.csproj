@@ -53,6 +53,7 @@
     <Compile Include="AuthBL.cs" />
     <Compile Include="BusinessBL.cs" />
     <Compile Include="Common.cs" />
+    <Compile Include="CourseBL.cs" />
     <Compile Include="CurrentUser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
