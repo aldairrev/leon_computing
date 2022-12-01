@@ -110,5 +110,13 @@ namespace LeonComputing_GUI
             Console.WriteLine("SEARCH: " + searchTxt.Text);
             populateBusinessTable();
         }
+
+        private void backBtn_Click(object sender, EventArgs e)
+        {
+            Dashboard f1 = new Dashboard();
+            Hide();
+            f1.ShowDialog();
+            Close();
+        }
     }
 }

@@ -31,10 +31,6 @@
             this.searchTxt = new System.Windows.Forms.TextBox();
             this.searchLbl = new System.Windows.Forms.Label();
             this.businessDtGrdView = new System.Windows.Forms.DataGridView();
-            this.createBtn = new System.Windows.Forms.Button();
-            this.editBtn = new System.Windows.Forms.Button();
-            this.deleteBtn = new System.Windows.Forms.Button();
-            this.selectedCellLbl = new System.Windows.Forms.Label();
             this.business_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.business_url = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -44,6 +40,11 @@
             this.business_address = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.business_phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.business_email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.createBtn = new System.Windows.Forms.Button();
+            this.editBtn = new System.Windows.Forms.Button();
+            this.deleteBtn = new System.Windows.Forms.Button();
+            this.selectedCellLbl = new System.Windows.Forms.Label();
+            this.backBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.businessDtGrdView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -86,47 +87,6 @@
             this.businessDtGrdView.Size = new System.Drawing.Size(758, 476);
             this.businessDtGrdView.TabIndex = 2;
             this.businessDtGrdView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.businessDtGrdView_CellClick);
-            // 
-            // createBtn
-            // 
-            this.createBtn.Location = new System.Drawing.Point(668, 32);
-            this.createBtn.Name = "createBtn";
-            this.createBtn.Size = new System.Drawing.Size(102, 23);
-            this.createBtn.TabIndex = 3;
-            this.createBtn.Text = "Crear";
-            this.createBtn.UseVisualStyleBackColor = true;
-            this.createBtn.Click += new System.EventHandler(this.createBtn_Click);
-            // 
-            // editBtn
-            // 
-            this.editBtn.Enabled = false;
-            this.editBtn.Location = new System.Drawing.Point(587, 31);
-            this.editBtn.Name = "editBtn";
-            this.editBtn.Size = new System.Drawing.Size(75, 23);
-            this.editBtn.TabIndex = 4;
-            this.editBtn.Text = "Editar";
-            this.editBtn.UseVisualStyleBackColor = true;
-            this.editBtn.Click += new System.EventHandler(this.editBtn_Click);
-            // 
-            // deleteBtn
-            // 
-            this.deleteBtn.Enabled = false;
-            this.deleteBtn.Location = new System.Drawing.Point(506, 31);
-            this.deleteBtn.Name = "deleteBtn";
-            this.deleteBtn.Size = new System.Drawing.Size(75, 23);
-            this.deleteBtn.TabIndex = 5;
-            this.deleteBtn.Text = "Borrar";
-            this.deleteBtn.UseVisualStyleBackColor = true;
-            this.deleteBtn.Click += new System.EventHandler(this.deleteBtn_Click);
-            // 
-            // selectedCellLbl
-            // 
-            this.selectedCellLbl.AutoSize = true;
-            this.selectedCellLbl.Location = new System.Drawing.Point(223, 39);
-            this.selectedCellLbl.Name = "selectedCellLbl";
-            this.selectedCellLbl.Size = new System.Drawing.Size(150, 16);
-            this.selectedCellLbl.TabIndex = 6;
-            this.selectedCellLbl.Text = "Ningun Id Seleccionado";
             // 
             // business_id
             // 
@@ -200,11 +160,63 @@
             this.business_email.ReadOnly = true;
             this.business_email.Width = 125;
             // 
+            // createBtn
+            // 
+            this.createBtn.Location = new System.Drawing.Point(668, 32);
+            this.createBtn.Name = "createBtn";
+            this.createBtn.Size = new System.Drawing.Size(102, 23);
+            this.createBtn.TabIndex = 3;
+            this.createBtn.Text = "Crear";
+            this.createBtn.UseVisualStyleBackColor = true;
+            this.createBtn.Click += new System.EventHandler(this.createBtn_Click);
+            // 
+            // editBtn
+            // 
+            this.editBtn.Enabled = false;
+            this.editBtn.Location = new System.Drawing.Point(587, 31);
+            this.editBtn.Name = "editBtn";
+            this.editBtn.Size = new System.Drawing.Size(75, 23);
+            this.editBtn.TabIndex = 4;
+            this.editBtn.Text = "Editar";
+            this.editBtn.UseVisualStyleBackColor = true;
+            this.editBtn.Click += new System.EventHandler(this.editBtn_Click);
+            // 
+            // deleteBtn
+            // 
+            this.deleteBtn.Enabled = false;
+            this.deleteBtn.Location = new System.Drawing.Point(506, 31);
+            this.deleteBtn.Name = "deleteBtn";
+            this.deleteBtn.Size = new System.Drawing.Size(75, 23);
+            this.deleteBtn.TabIndex = 5;
+            this.deleteBtn.Text = "Borrar";
+            this.deleteBtn.UseVisualStyleBackColor = true;
+            this.deleteBtn.Click += new System.EventHandler(this.deleteBtn_Click);
+            // 
+            // selectedCellLbl
+            // 
+            this.selectedCellLbl.AutoSize = true;
+            this.selectedCellLbl.Location = new System.Drawing.Point(223, 39);
+            this.selectedCellLbl.Name = "selectedCellLbl";
+            this.selectedCellLbl.Size = new System.Drawing.Size(150, 16);
+            this.selectedCellLbl.TabIndex = 6;
+            this.selectedCellLbl.Text = "Ningun Id Seleccionado";
+            // 
+            // backBtn
+            // 
+            this.backBtn.Location = new System.Drawing.Point(425, 31);
+            this.backBtn.Name = "backBtn";
+            this.backBtn.Size = new System.Drawing.Size(75, 23);
+            this.backBtn.TabIndex = 7;
+            this.backBtn.Text = "Volver";
+            this.backBtn.UseVisualStyleBackColor = true;
+            this.backBtn.Click += new System.EventHandler(this.backBtn_Click);
+            // 
             // BusinessForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(782, 553);
+            this.Controls.Add(this.backBtn);
             this.Controls.Add(this.selectedCellLbl);
             this.Controls.Add(this.deleteBtn);
             this.Controls.Add(this.editBtn);
@@ -240,5 +252,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn business_address;
         private System.Windows.Forms.DataGridViewTextBoxColumn business_phone;
         private System.Windows.Forms.DataGridViewTextBoxColumn business_email;
+        private System.Windows.Forms.Button backBtn;
     }
 }

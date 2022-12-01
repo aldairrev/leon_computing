@@ -83,11 +83,23 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EventForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EventForm.Designer.cs">
+      <DependentUpon>EventForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Course\CourseCreate.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Course\CourseCreate.Designer.cs">
       <DependentUpon>CourseCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Event\EventCreate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Event\EventCreate.Designer.cs">
+      <DependentUpon>EventCreate.cs</DependentUpon>
     </Compile>
     <Compile Include="PartnerForm.cs">
       <SubType>Form</SubType>
@@ -127,8 +139,14 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="EventForm.resx">
+      <DependentUpon>EventForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Course\CourseCreate.resx">
       <DependentUpon>CourseCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Event\EventCreate.resx">
+      <DependentUpon>EventCreate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PartnerForm.resx">
       <DependentUpon>PartnerForm.cs</DependentUpon>
@@ -191,8 +209,6 @@
   <ItemGroup>
     <None Include="Resources\schedule.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Event\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

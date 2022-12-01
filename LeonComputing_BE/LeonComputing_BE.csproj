@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AttendanceBE.cs" />
+    <Compile Include="EventBE.cs" />
     <Compile Include="BusinessBE.cs" />
     <Compile Include="CourseBE.cs" />
     <Compile Include="PartnerBE.cs" />

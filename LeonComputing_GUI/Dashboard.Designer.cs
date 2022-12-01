@@ -201,6 +201,7 @@
             this.eventsBtn.Text = "Eventos";
             this.eventsBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.eventsBtn.UseVisualStyleBackColor = true;
+            this.eventsBtn.Click += new System.EventHandler(this.eventsBtn_Click);
             // 
             // Dashboard
             // 

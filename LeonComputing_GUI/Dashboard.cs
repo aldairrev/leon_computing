@@ -101,5 +101,13 @@ namespace LeonComputing_GUI
             f1.ShowDialog();
             Close();
         }
+
+        private void eventsBtn_Click(object sender, EventArgs e)
+        {
+            EventForm f1 = new EventForm();
+            Hide();
+            f1.ShowDialog();
+            Close();
+        }
     }
 }

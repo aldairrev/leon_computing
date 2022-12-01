@@ -55,6 +55,7 @@
     <Compile Include="Common.cs" />
     <Compile Include="CourseBL.cs" />
     <Compile Include="CurrentUser.cs" />
+    <Compile Include="EventBL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

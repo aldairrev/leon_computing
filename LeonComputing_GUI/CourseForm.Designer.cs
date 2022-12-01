@@ -41,6 +41,7 @@
             this.editBtn = new System.Windows.Forms.Button();
             this.deleteBtn = new System.Windows.Forms.Button();
             this.selectedCellLbl = new System.Windows.Forms.Label();
+            this.backBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.courseDtGrdView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -170,11 +171,22 @@
             this.selectedCellLbl.TabIndex = 6;
             this.selectedCellLbl.Text = "Ningun Id Seleccionado";
             // 
+            // backBtn
+            // 
+            this.backBtn.Location = new System.Drawing.Point(425, 31);
+            this.backBtn.Name = "backBtn";
+            this.backBtn.Size = new System.Drawing.Size(75, 23);
+            this.backBtn.TabIndex = 7;
+            this.backBtn.Text = "Volver";
+            this.backBtn.UseVisualStyleBackColor = true;
+            this.backBtn.Click += new System.EventHandler(this.backBtn_Click);
+            // 
             // CourseForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(782, 553);
+            this.Controls.Add(this.backBtn);
             this.Controls.Add(this.selectedCellLbl);
             this.Controls.Add(this.deleteBtn);
             this.Controls.Add(this.editBtn);
@@ -207,5 +219,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn course_hours_theory;
         private System.Windows.Forms.DataGridViewTextBoxColumn course_level;
         private System.Windows.Forms.DataGridViewTextBoxColumn course_description;
+        private System.Windows.Forms.Button backBtn;
     }
 }

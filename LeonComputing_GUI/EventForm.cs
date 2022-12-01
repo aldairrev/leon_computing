@@ -9,21 +9,20 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using LeonComputing_BE;
 using LeonComputing_BL;
-using LeonComputing_GUI.Business;
-using LeonComputing_GUI.Course;
+using LeonComputing_GUI.Event;
 
 namespace LeonComputing_GUI
 {
-    public partial class CourseForm : Form
+    public partial class EventForm : Form
     {
-        private readonly CourseBL courseBL;
-        List<CourseBE> courses;
+        private readonly EventBL eventBL;
+        List<EventBE> events;
         int rowSelected = -1;
-        public CourseForm()
+        public EventForm()
         {
             InitializeComponent();
-            courseBL = new CourseBL();
-            populateCourseTable();
+            eventBL = new EventBL();
+            populateEventTable();
         }
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
@@ -31,37 +30,37 @@ namespace LeonComputing_GUI
 
         }
 
-        private void populateCourseTable()
+        private void populateEventTable()
         {
-            courseDtGrdView.Rows.Clear();
+            eventDtGrdView.Rows.Clear();
             if (!searchTxt.Text.Equals("") && searchTxt.Text.Length > 2)
             {
-                courses = this.courseBL.Search(searchTxt.Text);
+                events = this.eventBL.Search(searchTxt.Text);
             } else
             {
-                courses = this.courseBL.getAll();
+                events = this.eventBL.getAll();
             }
-            foreach (CourseBE course in courses)
+            foreach (EventBE evt in events)
             {
-                courseDtGrdView.Rows.Add(course.Id, course.Name, course.Hours_practice, course.Hours_theory, course.Level, course.Description);
+                eventDtGrdView.Rows.Add(evt.Id, evt.Name, evt.Started_time, evt.Ended_time, evt.Frecuency, evt.Part_day, evt.Budget, evt.Address, evt.Postal_code, evt.Capacity);
             }
 
         }
 
         private void createBtn_Click(object sender, EventArgs e)
         {
-            CourseCreate f1 = new CourseCreate();
+            EventCreate f1 = new EventCreate();
             Hide();
             f1.ShowDialog();
             Close();
         }
 
-        private void courseDtGrdView_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void eventDtGrdView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (courses.Count > e.RowIndex && e.RowIndex + 1 > 0)
+            if (events.Count > e.RowIndex && e.RowIndex + 1 > 0)
             {
                 rowSelected = e.RowIndex;
-                selectedCellLbl.Text = $"ID seleccionado: {courses[rowSelected].Id}";
+                selectedCellLbl.Text = $"ID seleccionado: {events[rowSelected].Id}";
                 editBtn.Enabled = true;
                 deleteBtn.Enabled = true;
             } else
@@ -76,8 +75,8 @@ namespace LeonComputing_GUI
 
         private void editBtn_Click(object sender, EventArgs e)
         {
-            Common.CourseEditingId = courses[rowSelected].Id;
-            CourseCreate f1 = new CourseCreate();
+            Common.EventEditingId = events[rowSelected].Id;
+            EventCreate f1 = new EventCreate();
             Hide();
             f1.ShowDialog();
             Close();
@@ -85,15 +84,15 @@ namespace LeonComputing_GUI
 
         private void deleteBtn_Click(object sender, EventArgs e)
         {
-            CourseBE course = courses[rowSelected];
-            DialogResult dialogResult = MessageBox.Show($"Estas seguro que quieres borrar:\n {course.Name}" , "Borrar", MessageBoxButtons.YesNo);
+            EventBE evt = events[rowSelected];
+            DialogResult dialogResult = MessageBox.Show($"Estas seguro que quieres borrar:\n {evt.Name}" , "Borrar", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
-                bool deleted = courseBL.Delete(course.Id);
+                bool deleted = eventBL.Delete(evt.Id);
                 if (deleted)
                 {
                     MessageBox.Show("Borrado Correctamente", "Borrado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    populateCourseTable();
+                    populateEventTable();
 
                 } else
                 {
@@ -109,7 +108,7 @@ namespace LeonComputing_GUI
         private void textBox1_Leave(object sender, EventArgs e)
         {
             Console.WriteLine("SEARCH: " + searchTxt.Text);
-            populateCourseTable();
+            populateEventTable();
         }
 
         private void backBtn_Click(object sender, EventArgs e)
