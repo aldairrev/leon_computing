@@ -11,7 +11,7 @@ namespace LeonComputing_WEB.Consultas
 {
 
 
-    public partial class Empresas
+    public partial class Eventos
     {
 
         /// <summary>
@@ -21,6 +21,5 @@ namespace LeonComputing_WEB.Consultas
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView empresasData;
     }
 }

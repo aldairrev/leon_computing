@@ -11,16 +11,16 @@ namespace LeonComputing_WEB.Consultas
 {
 
 
-    public partial class Empresas
+    public partial class Cursos
     {
 
         /// <summary>
-        /// empresasData control.
+        /// cursosData control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView empresasData;
+        protected global::System.Web.UI.WebControls.GridView cursosData;
     }
 }

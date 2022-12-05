@@ -1,14 +1,14 @@
-﻿<%@ Page Title="Empresas" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Empresas.aspx.cs" Inherits="LeonComputing_WEB.Consultas.Empresas" %>
+﻿<%@ Page Title="Cursos" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Cursos.aspx.cs" Inherits="LeonComputing_WEB.Consultas.Cursos" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     
 
-    <asp:GridView ID="empresasData" runat="server" AutoGenerateColumns="False" Width="100%" CellPadding="4" ForeColor="#333333" GridLines="None">
+    <asp:GridView ID="cursosData" runat="server" AutoGenerateColumns="False" Width="100%" CellPadding="4" ForeColor="#333333" GridLines="None">
         <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
         <Columns>
             <asp:BoundField DataField="name" HeaderText="Nombre" />
-            <asp:BoundField DataField="url" HeaderText="Url" />
-            <asp:BoundField DataField="code_id" HeaderText="Ruc" />
+            <asp:BoundField DataField="level" HeaderText="Nivel" />
+            <asp:BoundField DataField="description" HeaderText="Descripción" />
         </Columns>
         
         <EditRowStyle BackColor="#999999" />

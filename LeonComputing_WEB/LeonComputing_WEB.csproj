@@ -105,7 +105,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Consultas\Cursos.aspx" />
     <Content Include="Consultas\Empresas.aspx" />
+    <Content Include="Consultas\Eventos.aspx" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Default.aspx" />
@@ -152,12 +154,26 @@
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Consultas\Cursos.aspx.cs">
+      <DependentUpon>Cursos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Consultas\Cursos.aspx.designer.cs">
+      <DependentUpon>Cursos.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Consultas\Empresas.aspx.cs">
       <DependentUpon>Empresas.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Consultas\Empresas.aspx.designer.cs">
       <DependentUpon>Empresas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Consultas\Eventos.aspx.cs">
+      <DependentUpon>Eventos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Consultas\Eventos.aspx.designer.cs">
+      <DependentUpon>Eventos.aspx</DependentUpon>
     </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
@@ -191,6 +207,16 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LeonComputing_BE\LeonComputing_BE.csproj">
+      <Project>{d4ee53df-eb4a-452e-b36b-558763631a90}</Project>
+      <Name>LeonComputing_BE</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LeonComputing_BL\LeonComputing_BL.csproj">
+      <Project>{61df42da-4221-4f25-9498-e4caeebb47f4}</Project>
+      <Name>LeonComputing_BL</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
