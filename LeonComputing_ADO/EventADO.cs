@@ -275,5 +275,52 @@ namespace LeonComputing_ADO
                 con.connClose();
             }
         }
+
+        public List<EventBE> getTenBestCapacity()
+        {
+            List<EventBE> events = new List<EventBE>();
+            try
+            {
+                Connection.DataSource();
+                con.connOpen();
+                SqlCommand command = new SqlCommand();
+                command.CommandText = ($"SELECT TOP 10 * FROM {table} order by capacity desc");
+
+                command.Connection = Connection.connMaster;
+                SqlDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    EventBE evt = new EventBE
+                    {
+                        Id = reader.GetInt32(reader.GetOrdinal("id")),
+                        Name = reader.GetString(reader.GetOrdinal("name")),
+                        Started_time = reader.GetDateTime(reader.GetOrdinal("started_time")),
+                        Ended_time = reader.GetDateTime(reader.GetOrdinal("ended_time")),
+                        Frecuency = reader.GetString(reader.GetOrdinal("frecuency")),
+                        Part_day = reader["part_day"].ToString()[0],
+                        Budget = reader.GetDecimal(reader.GetOrdinal("budget")),
+                        Address = reader.GetString(reader.GetOrdinal("address")),
+                        Postal_code = reader.GetString(reader.GetOrdinal("postal_code")),
+                        Capacity = reader.GetInt32(reader.GetOrdinal("capacity")),
+                        Created_at = reader.GetDateTime(reader.GetOrdinal("created_at")),
+                        Created_by = reader.GetInt32(reader.GetOrdinal("created_by")),
+                        Updated_at = reader.GetDateTime(reader.GetOrdinal("updated_at")),
+                        Updated_by = reader.GetInt32(reader.GetOrdinal("updated_by")),
+                    };
+                    events.Add(evt);
+                }
+                return events;
+            }
+            catch (Exception ex)
+            {
+                Console.Error.WriteLine(ex.Message);
+                return null;
+            }
+            finally
+            {
+                con.connClose();
+            }
+        }
     }
 }

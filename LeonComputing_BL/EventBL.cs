@@ -42,5 +42,10 @@ namespace LeonComputing_BL
         {
             return ado.Delete(id);
         }
+
+        public List<EventBE> getTenBestCapacity()
+        {
+            return ado.getTenBestCapacity();
+        }
     }
 }

@@ -17,7 +17,7 @@ namespace LeonComputing_WEB.Consultas
         protected void Page_Load(object sender, EventArgs e)
         {
             List<CourseBE> courses = courseBL.getAll();
-            cursosData.DataSource = courses;
+            cursosData.DataSource = courses ?? new List<CourseBE>();
             cursosData.DataBind();
         }
     }
