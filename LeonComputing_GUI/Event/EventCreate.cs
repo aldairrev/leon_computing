@@ -18,7 +18,8 @@ namespace LeonComputing_GUI.Event
         public EventCreate()
         {
             InitializeComponent();
-            eventBL= new EventBL();
+            CenterToScreen();
+            eventBL = new EventBL();
 
             if (!(Common.EventEditingId is null))
             {

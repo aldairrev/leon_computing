@@ -21,6 +21,7 @@ namespace LeonComputing_GUI
         public EventForm()
         {
             InitializeComponent();
+            CenterToScreen();
             eventBL = new EventBL();
             populateEventTable();
         }

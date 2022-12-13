@@ -22,6 +22,7 @@ namespace LeonComputing_GUI
         public CourseForm()
         {
             InitializeComponent();
+            CenterToScreen();
             courseBL = new CourseBL();
             populateCourseTable();
         }

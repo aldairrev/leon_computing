@@ -21,6 +21,7 @@ namespace LeonComputing_GUI
         public PartnerForm()
         {
             InitializeComponent();
+            CenterToScreen();
             businessBL = new BusinessBL();
             populateBusinessTable();
         }

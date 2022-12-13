@@ -17,6 +17,7 @@ namespace LeonComputing_GUI
         public Login()
         {
             InitializeComponent();
+            CenterToScreen();
         }
 
         private void loginBtn_Click(object sender, EventArgs e)

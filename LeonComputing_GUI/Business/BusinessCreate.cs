@@ -18,7 +18,8 @@ namespace LeonComputing_GUI.Business
         public BusinessCreate()
         {
             InitializeComponent();
-            businessBL= new BusinessBL();
+            CenterToScreen();
+            businessBL = new BusinessBL();
 
             if (!(Common.BusinessEditingId is null))
             {

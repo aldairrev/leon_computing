@@ -18,7 +18,8 @@ namespace LeonComputing_GUI.Course
         public CourseCreate()
         {
             InitializeComponent();
-            courseBL= new CourseBL();
+            CenterToScreen();
+            courseBL = new CourseBL();
 
             if (!(Common.CourseEditingId is null))
             {

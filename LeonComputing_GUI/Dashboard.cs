@@ -21,6 +21,7 @@ namespace LeonComputing_GUI
         {
             InitializeComponent();
             SetupComponent();
+            CenterToScreen();
         }
 
         private void SetupComponent()
