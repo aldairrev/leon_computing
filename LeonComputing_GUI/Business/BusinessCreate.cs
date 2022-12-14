@@ -15,11 +15,28 @@ namespace LeonComputing_GUI.Business
     public partial class BusinessCreate : Form
     {
         BusinessBL businessBL = null;
+        UbigeoBL ubigeoBL = null;
+        DataTable departamentos = null;
+        DataTable provincias = null;
+        DataTable distritos = null;
+
+        string departamentoId = null;
+        string provinciaId = null;
+        string distritoId = null;
+
         public BusinessCreate()
         {
             InitializeComponent();
             CenterToScreen();
             businessBL = new BusinessBL();
+            ubigeoBL = new UbigeoBL();
+            departamentos = ubigeoBL.Ubigeo_Departamentos();
+
+            // populate departamentos
+            foreach (DataRow row in departamentos.Rows)
+            {
+                departamentoCmbBox.Items.Add(row["departamento"]);
+            }
 
             if (!(Common.BusinessEditingId is null))
             {
@@ -27,11 +44,32 @@ namespace LeonComputing_GUI.Business
                 idTxt.Text = business.Id.ToString();
                 nameTxt.Text = business.Name;
                 urlTxt.Text = business.Url;
-                ubigeoCodeTxt.Text = business.Ubigeo_code;
                 emailTxt.Text = business.Email;
                 phoneTxt.Text = business.Phone;
                 addressTxt.Text = business.Address;
                 codeIdTxt.Text = business.Code_id;
+                DataTable ubigeo = ubigeoBL.getUbigeoById(business.Ubigeo_code);
+                if (ubigeo.Rows.Count > 0)
+                {
+                    departamentoCmbBox.SelectedIndex = departamentoCmbBox.FindString(ubigeo.Rows[0]["departamento"].ToString());
+                    departamentoId = ubigeo.Rows[0]["id_departamento"].ToString();
+
+                    provincias = ubigeoBL.Ubigeo_ProvinciasDepartamento(departamentoId);
+                    foreach (DataRow row in provincias.Rows)
+                    {
+                        provinciaCmbBox.Items.Add(row["provincia"]);
+                    }
+                    provinciaCmbBox.SelectedIndex = provinciaCmbBox.FindString(ubigeo.Rows[0]["provincia"].ToString());
+                    provinciaId = ubigeo.Rows[0]["id_provincia"].ToString();
+
+                    distritos = ubigeoBL.Ubigeo_DistritosProvinciaDepartamento(departamentoId, provinciaId);
+                    foreach (DataRow row in distritos.Rows)
+                    {
+                        distritoCmbBox.Items.Add(row["distrito"]);
+                    }
+                    distritoCmbBox.SelectedIndex = distritoCmbBox.FindString(ubigeo.Rows[0]["distrito"].ToString());
+                    distritoId = ubigeo.Rows[0]["id_distrito"].ToString();
+                }
             }
         }
 
@@ -48,10 +86,14 @@ namespace LeonComputing_GUI.Business
 
         private void saveBtn_Click(object sender, EventArgs e)
         {
+            if (departamentoId != "" && provinciaId != "" && distritoId != "")
+            {
+                return;
+            }
             string name = nameTxt.Text;
             string url = urlTxt.Text;
             string code_id = codeIdTxt.Text;
-            string ubigeo_code = ubigeoCodeTxt.Text;
+            string ubigeo_code = departamentoId + provinciaId + distritoId;
             string address = addressTxt.Text;
             string email = emailTxt.Text;
             string phone= phoneTxt.Text;
@@ -134,6 +176,40 @@ namespace LeonComputing_GUI.Business
             Hide();
             f2.ShowDialog();
             Close();
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void departamentoCmbBox_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            departamentoId = departamentos.Rows[departamentoCmbBox.SelectedIndex]["id_departamento"].ToString();
+
+            provincias = ubigeoBL.Ubigeo_ProvinciasDepartamento(departamentoId);
+            provinciaCmbBox.Items.Clear();
+            foreach (DataRow row in provincias.Rows)
+            {
+                provinciaCmbBox.Items.Add(row["provincia"]);
+            }
+        }
+
+        private void provinciaCmbBox_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            provinciaId = provincias.Rows[provinciaCmbBox.SelectedIndex]["id_provincia"].ToString();
+
+            distritos = ubigeoBL.Ubigeo_DistritosProvinciaDepartamento(departamentoId, provinciaId);
+            distritoCmbBox.Items.Clear();
+            foreach (DataRow row in provincias.Rows)
+            {
+                distritoCmbBox.Items.Add(row["distrito"]);
+            }
+        }
+
+        private void distritoCmbBox_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            distritoId = distritos.Rows[distritoCmbBox.SelectedIndex]["id_distrito"].ToString();
         }
     }
 }

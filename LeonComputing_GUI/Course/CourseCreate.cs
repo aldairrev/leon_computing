@@ -1,13 +1,6 @@
 ﻿using LeonComputing_BE;
 using LeonComputing_BL;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace LeonComputing_GUI.Course
@@ -26,9 +19,19 @@ namespace LeonComputing_GUI.Course
                 CourseBE course = courseBL.FindById(Common.CourseEditingId ?? 0);
                 idTxt.Text = course.Id.ToString();
                 nameTxt.Text = course.Name;
-                hoursTheoryTxt.Text = course.Hours_theory.ToString();
-                hoursPracticeTxt.Text = course.Hours_practice.ToString();
-                levelTxt.Text = course.Level.ToString();
+
+                hoursTheoryNumUpDown.Value = course.Hours_theory;
+                hoursPracticeNumUpDown.Value= course.Hours_practice;
+                if (course.Level == 'E')
+                {
+                    levelCmbBox.SelectedIndex = levelCmbBox.FindString("Basico");
+                } else if (course.Level == 'N')
+                {
+                    levelCmbBox.SelectedIndex = levelCmbBox.FindString("Intermedio");
+                } else if (course.Level == 'H')
+                {
+                    levelCmbBox.SelectedIndex = levelCmbBox.FindString("Dificil");
+                }
                 descriptionTxt.Text= course.Description;
             }
         }
@@ -41,9 +44,22 @@ namespace LeonComputing_GUI.Course
         private void saveBtn_Click(object sender, EventArgs e)
         {
             string name = nameTxt.Text;
-            string hours_practice = hoursPracticeTxt.Text;
-            string hours_theory = hoursTheoryTxt.Text;
-            string level = hoursPracticeTxt.Text;
+            string hours_practice = hoursPracticeNumUpDown.Value.ToString();
+            string hours_theory = hoursTheoryNumUpDown.Value.ToString();
+            string level = "";
+
+            if (levelCmbBox.GetItemText(levelCmbBox.SelectedItem) == "Basico")
+            {
+                level = "E";
+            }
+            else if (levelCmbBox.GetItemText(levelCmbBox.SelectedItem) == "Intermedio")
+            {
+                level = "N";
+            }
+            else if (levelCmbBox.GetItemText(levelCmbBox.SelectedItem) == "Dificil")
+            {
+                level = "H";
+            }
             string description = descriptionTxt.Text;
 
             if (CheckValueFromTextBox(name) && CheckValueFromTextBox(hours_practice) && CheckValueFromTextBox(hours_theory) && CheckValueFromTextBox(level))

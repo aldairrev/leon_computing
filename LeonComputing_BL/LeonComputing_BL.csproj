@@ -53,6 +53,7 @@
     <Compile Include="AuthBL.cs" />
     <Compile Include="BusinessBL.cs" />
     <Compile Include="Common.cs" />
+    <Compile Include="UbigeoBL.cs" />
     <Compile Include="CourseBL.cs" />
     <Compile Include="CurrentUser.cs" />
     <Compile Include="EventBL.cs" />

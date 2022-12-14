@@ -44,7 +44,21 @@ namespace LeonComputing_GUI
             }
             foreach (CourseBE course in courses)
             {
-                courseDtGrdView.Rows.Add(course.Id, course.Name, course.Hours_practice, course.Hours_theory, course.Level, course.Description);
+                string level = "";
+
+                if (course.Level == 'E')
+                {
+                    level = "Basico";
+                }
+                else if (course.Level == 'N')
+                {
+                    level = "Intermedio";
+                }
+                else if (course.Level == 'H')
+                {
+                    level = "Dificil";
+                }
+                courseDtGrdView.Rows.Add(course.Id, course.Name, course.Hours_practice, course.Hours_theory, level, course.Description);
             }
 
         }

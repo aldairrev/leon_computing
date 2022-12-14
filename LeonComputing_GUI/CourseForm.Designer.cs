@@ -31,17 +31,17 @@
             this.searchTxt = new System.Windows.Forms.TextBox();
             this.searchLbl = new System.Windows.Forms.Label();
             this.courseDtGrdView = new System.Windows.Forms.DataGridView();
+            this.createBtn = new System.Windows.Forms.Button();
+            this.editBtn = new System.Windows.Forms.Button();
+            this.deleteBtn = new System.Windows.Forms.Button();
+            this.selectedCellLbl = new System.Windows.Forms.Label();
+            this.backBtn = new System.Windows.Forms.Button();
             this.course_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.course_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.course_hours_practice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.course_hours_theory = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.course_level = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.course_description = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.createBtn = new System.Windows.Forms.Button();
-            this.editBtn = new System.Windows.Forms.Button();
-            this.deleteBtn = new System.Windows.Forms.Button();
-            this.selectedCellLbl = new System.Windows.Forms.Label();
-            this.backBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.courseDtGrdView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -81,54 +81,6 @@
             this.courseDtGrdView.Size = new System.Drawing.Size(758, 476);
             this.courseDtGrdView.TabIndex = 2;
             this.courseDtGrdView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.courseDtGrdView_CellClick);
-            // 
-            // course_id
-            // 
-            this.course_id.HeaderText = "Id";
-            this.course_id.MinimumWidth = 6;
-            this.course_id.Name = "course_id";
-            this.course_id.ReadOnly = true;
-            this.course_id.Width = 125;
-            // 
-            // course_name
-            // 
-            this.course_name.HeaderText = "Nombre";
-            this.course_name.MinimumWidth = 6;
-            this.course_name.Name = "course_name";
-            this.course_name.ReadOnly = true;
-            this.course_name.Width = 125;
-            // 
-            // course_hours_practice
-            // 
-            this.course_hours_practice.HeaderText = "Horas de Práctica";
-            this.course_hours_practice.MinimumWidth = 6;
-            this.course_hours_practice.Name = "course_hours_practice";
-            this.course_hours_practice.ReadOnly = true;
-            this.course_hours_practice.Width = 125;
-            // 
-            // course_hours_theory
-            // 
-            this.course_hours_theory.HeaderText = "Horas teoría";
-            this.course_hours_theory.MinimumWidth = 6;
-            this.course_hours_theory.Name = "course_hours_theory";
-            this.course_hours_theory.ReadOnly = true;
-            this.course_hours_theory.Width = 125;
-            // 
-            // course_level
-            // 
-            this.course_level.HeaderText = "Nivel";
-            this.course_level.MinimumWidth = 6;
-            this.course_level.Name = "course_level";
-            this.course_level.ReadOnly = true;
-            this.course_level.Width = 125;
-            // 
-            // course_description
-            // 
-            this.course_description.HeaderText = "Descripción";
-            this.course_description.MinimumWidth = 6;
-            this.course_description.Name = "course_description";
-            this.course_description.ReadOnly = true;
-            this.course_description.Width = 125;
             // 
             // createBtn
             // 
@@ -181,6 +133,54 @@
             this.backBtn.UseVisualStyleBackColor = true;
             this.backBtn.Click += new System.EventHandler(this.backBtn_Click);
             // 
+            // course_id
+            // 
+            this.course_id.HeaderText = "Id";
+            this.course_id.MinimumWidth = 6;
+            this.course_id.Name = "course_id";
+            this.course_id.ReadOnly = true;
+            this.course_id.Width = 40;
+            // 
+            // course_name
+            // 
+            this.course_name.HeaderText = "Nombre";
+            this.course_name.MinimumWidth = 6;
+            this.course_name.Name = "course_name";
+            this.course_name.ReadOnly = true;
+            this.course_name.Width = 160;
+            // 
+            // course_hours_practice
+            // 
+            this.course_hours_practice.HeaderText = "Horas de Práctica";
+            this.course_hours_practice.MinimumWidth = 6;
+            this.course_hours_practice.Name = "course_hours_practice";
+            this.course_hours_practice.ReadOnly = true;
+            this.course_hours_practice.Width = 60;
+            // 
+            // course_hours_theory
+            // 
+            this.course_hours_theory.HeaderText = "Horas teoría";
+            this.course_hours_theory.MinimumWidth = 6;
+            this.course_hours_theory.Name = "course_hours_theory";
+            this.course_hours_theory.ReadOnly = true;
+            this.course_hours_theory.Width = 60;
+            // 
+            // course_level
+            // 
+            this.course_level.HeaderText = "Nivel";
+            this.course_level.MinimumWidth = 6;
+            this.course_level.Name = "course_level";
+            this.course_level.ReadOnly = true;
+            this.course_level.Width = 80;
+            // 
+            // course_description
+            // 
+            this.course_description.HeaderText = "Descripción";
+            this.course_description.MinimumWidth = 6;
+            this.course_description.Name = "course_description";
+            this.course_description.ReadOnly = true;
+            this.course_description.Width = 200;
+            // 
             // CourseForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -213,12 +213,12 @@
         private System.Windows.Forms.Button editBtn;
         private System.Windows.Forms.Button deleteBtn;
         private System.Windows.Forms.Label selectedCellLbl;
+        private System.Windows.Forms.Button backBtn;
         private System.Windows.Forms.DataGridViewTextBoxColumn course_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn course_name;
         private System.Windows.Forms.DataGridViewTextBoxColumn course_hours_practice;
         private System.Windows.Forms.DataGridViewTextBoxColumn course_hours_theory;
         private System.Windows.Forms.DataGridViewTextBoxColumn course_level;
         private System.Windows.Forms.DataGridViewTextBoxColumn course_description;
-        private System.Windows.Forms.Button backBtn;
     }
 }

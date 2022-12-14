@@ -41,14 +41,11 @@
             this.nameTxt = new System.Windows.Forms.TextBox();
             this.flowLayoutPanel11 = new System.Windows.Forms.FlowLayoutPanel();
             this.label5 = new System.Windows.Forms.Label();
-            this.hoursPracticeTxt = new System.Windows.Forms.TextBox();
             this.flowLayoutPanel12 = new System.Windows.Forms.FlowLayoutPanel();
             this.label6 = new System.Windows.Forms.Label();
-            this.hoursTheoryTxt = new System.Windows.Forms.TextBox();
             this.flowLayoutPanel7 = new System.Windows.Forms.FlowLayoutPanel();
             this.flowLayoutPanel8 = new System.Windows.Forms.FlowLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
-            this.levelTxt = new System.Windows.Forms.TextBox();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.label7 = new System.Windows.Forms.Label();
             this.descriptionTxt = new System.Windows.Forms.TextBox();
@@ -56,6 +53,9 @@
             this.flowLayoutPanel14 = new System.Windows.Forms.FlowLayoutPanel();
             this.backBtn = new System.Windows.Forms.Button();
             this.saveBtn = new System.Windows.Forms.Button();
+            this.hoursPracticeNumUpDown = new System.Windows.Forms.NumericUpDown();
+            this.hoursTheoryNumUpDown = new System.Windows.Forms.NumericUpDown();
+            this.levelCmbBox = new System.Windows.Forms.ComboBox();
             this.flowLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -70,6 +70,8 @@
             this.flowLayoutPanel2.SuspendLayout();
             this.flowLayoutPanel9.SuspendLayout();
             this.flowLayoutPanel14.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.hoursPracticeNumUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hoursTheoryNumUpDown)).BeginInit();
             this.SuspendLayout();
             // 
             // flowLayoutPanel1
@@ -196,7 +198,7 @@
             // 
             this.flowLayoutPanel11.AutoSize = true;
             this.flowLayoutPanel11.Controls.Add(this.label5);
-            this.flowLayoutPanel11.Controls.Add(this.hoursPracticeTxt);
+            this.flowLayoutPanel11.Controls.Add(this.hoursPracticeNumUpDown);
             this.flowLayoutPanel11.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanel11.Location = new System.Drawing.Point(0, 128);
             this.flowLayoutPanel11.Margin = new System.Windows.Forms.Padding(0, 20, 0, 0);
@@ -213,20 +215,11 @@
             this.label5.TabIndex = 5;
             this.label5.Text = "Horas de practica *";
             // 
-            // hoursPracticeTxt
-            // 
-            this.hoursPracticeTxt.Location = new System.Drawing.Point(3, 19);
-            this.hoursPracticeTxt.Name = "hoursPracticeTxt";
-            this.hoursPracticeTxt.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.hoursPracticeTxt.Size = new System.Drawing.Size(257, 22);
-            this.hoursPracticeTxt.TabIndex = 2;
-            this.hoursPracticeTxt.Text = "1";
-            // 
             // flowLayoutPanel12
             // 
             this.flowLayoutPanel12.AutoSize = true;
             this.flowLayoutPanel12.Controls.Add(this.label6);
-            this.flowLayoutPanel12.Controls.Add(this.hoursTheoryTxt);
+            this.flowLayoutPanel12.Controls.Add(this.hoursTheoryNumUpDown);
             this.flowLayoutPanel12.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanel12.Location = new System.Drawing.Point(0, 192);
             this.flowLayoutPanel12.Margin = new System.Windows.Forms.Padding(0, 20, 0, 0);
@@ -243,15 +236,6 @@
             this.label6.TabIndex = 5;
             this.label6.Text = "Horas de teoría";
             // 
-            // hoursTheoryTxt
-            // 
-            this.hoursTheoryTxt.Location = new System.Drawing.Point(3, 19);
-            this.hoursTheoryTxt.Name = "hoursTheoryTxt";
-            this.hoursTheoryTxt.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.hoursTheoryTxt.Size = new System.Drawing.Size(257, 22);
-            this.hoursTheoryTxt.TabIndex = 4;
-            this.hoursTheoryTxt.Text = "1";
-            // 
             // flowLayoutPanel7
             // 
             this.flowLayoutPanel7.AutoSize = true;
@@ -261,19 +245,19 @@
             this.flowLayoutPanel7.Location = new System.Drawing.Point(323, 20);
             this.flowLayoutPanel7.Margin = new System.Windows.Forms.Padding(20);
             this.flowLayoutPanel7.Name = "flowLayoutPanel7";
-            this.flowLayoutPanel7.Size = new System.Drawing.Size(263, 175);
+            this.flowLayoutPanel7.Size = new System.Drawing.Size(263, 177);
             this.flowLayoutPanel7.TabIndex = 8;
             // 
             // flowLayoutPanel8
             // 
             this.flowLayoutPanel8.AutoSize = true;
             this.flowLayoutPanel8.Controls.Add(this.label1);
-            this.flowLayoutPanel8.Controls.Add(this.levelTxt);
+            this.flowLayoutPanel8.Controls.Add(this.levelCmbBox);
             this.flowLayoutPanel8.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanel8.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel8.Margin = new System.Windows.Forms.Padding(0);
             this.flowLayoutPanel8.Name = "flowLayoutPanel8";
-            this.flowLayoutPanel8.Size = new System.Drawing.Size(263, 44);
+            this.flowLayoutPanel8.Size = new System.Drawing.Size(263, 46);
             this.flowLayoutPanel8.TabIndex = 9;
             // 
             // label1
@@ -285,21 +269,13 @@
             this.label1.TabIndex = 5;
             this.label1.Text = "Nivel";
             // 
-            // levelTxt
-            // 
-            this.levelTxt.Location = new System.Drawing.Point(3, 19);
-            this.levelTxt.Name = "levelTxt";
-            this.levelTxt.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.levelTxt.Size = new System.Drawing.Size(257, 22);
-            this.levelTxt.TabIndex = 4;
-            // 
             // flowLayoutPanel2
             // 
             this.flowLayoutPanel2.AutoSize = true;
             this.flowLayoutPanel2.Controls.Add(this.label7);
             this.flowLayoutPanel2.Controls.Add(this.descriptionTxt);
             this.flowLayoutPanel2.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(0, 64);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(0, 66);
             this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(0, 20, 0, 0);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             this.flowLayoutPanel2.Size = new System.Drawing.Size(263, 111);
@@ -363,6 +339,32 @@
             this.saveBtn.UseVisualStyleBackColor = true;
             this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
             // 
+            // hoursPracticeNumUpDown
+            // 
+            this.hoursPracticeNumUpDown.Location = new System.Drawing.Point(3, 19);
+            this.hoursPracticeNumUpDown.Name = "hoursPracticeNumUpDown";
+            this.hoursPracticeNumUpDown.Size = new System.Drawing.Size(257, 22);
+            this.hoursPracticeNumUpDown.TabIndex = 6;
+            // 
+            // hoursTheoryNumUpDown
+            // 
+            this.hoursTheoryNumUpDown.Location = new System.Drawing.Point(3, 19);
+            this.hoursTheoryNumUpDown.Name = "hoursTheoryNumUpDown";
+            this.hoursTheoryNumUpDown.Size = new System.Drawing.Size(257, 22);
+            this.hoursTheoryNumUpDown.TabIndex = 6;
+            // 
+            // levelCmbBox
+            // 
+            this.levelCmbBox.FormattingEnabled = true;
+            this.levelCmbBox.Items.AddRange(new object[] {
+            "Basico",
+            "Intermedio",
+            "Dificil"});
+            this.levelCmbBox.Location = new System.Drawing.Point(3, 19);
+            this.levelCmbBox.Name = "levelCmbBox";
+            this.levelCmbBox.Size = new System.Drawing.Size(257, 24);
+            this.levelCmbBox.TabIndex = 6;
+            // 
             // CourseCreate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -396,6 +398,8 @@
             this.flowLayoutPanel9.ResumeLayout(false);
             this.flowLayoutPanel9.PerformLayout();
             this.flowLayoutPanel14.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.hoursPracticeNumUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hoursTheoryNumUpDown)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -412,13 +416,10 @@
         private System.Windows.Forms.TextBox nameTxt;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel11;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox hoursPracticeTxt;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel12;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox hoursTheoryTxt;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel8;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox levelTxt;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox descriptionTxt;
@@ -429,5 +430,8 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel15;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox idTxt;
+        private System.Windows.Forms.NumericUpDown hoursPracticeNumUpDown;
+        private System.Windows.Forms.NumericUpDown hoursTheoryNumUpDown;
+        private System.Windows.Forms.ComboBox levelCmbBox;
     }
 }
