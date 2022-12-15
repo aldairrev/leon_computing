@@ -156,6 +156,8 @@ namespace LeonComputing_ADO
                     };
                 }
 
+                reader.Close();
+
                 return business;
             }
             catch (Exception ex)

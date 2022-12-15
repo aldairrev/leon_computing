@@ -13,7 +13,6 @@ namespace LeonComputing_ADO
     public class UbigeoADO
     {
         Connection con = new Connection();
-        Boolean blnexito = false;
 
         public DataTable Ubigeo_Departamentos()
         {
@@ -34,7 +33,7 @@ namespace LeonComputing_ADO
             catch (SqlException ex)
             {
                 throw new Exception(ex.Message);
-            }
+            } finally { con.connClose(); }
         }
 
         public DataTable Ubigeo_ProvinciasDepartamento(String strIdDepartamento)
@@ -58,6 +57,7 @@ namespace LeonComputing_ADO
             {
                 throw new Exception(ex.Message);
             }
+            finally { con.connClose(); }
         }
 
         public DataTable Ubigeo_DistritosProvinciaDepartamento(String strIdDepartamento, String strIdProvincia)
@@ -82,6 +82,7 @@ namespace LeonComputing_ADO
             {
                 throw new Exception(ex.Message);
             }
+            finally { con.connClose(); }
         }
         
         public DataTable getUbigeoById(string id)
@@ -92,12 +93,10 @@ namespace LeonComputing_ADO
                 con.connOpen();
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = Connection.connMaster;
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.CommandText = ($"SELECT * FROM {"ubigeo"} WHERE id = @id");
-                cmd.Parameters.AddWithValue("@id", id);
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = $"SELECT * FROM {"ubigeo"} WHERE id = @id";
+                cmd.Parameters.AddWithValue("@id", Int32.Parse(id));
 
-                cmd.Connection = Connection.connMaster;
-                SqlDataReader reader = cmd.ExecuteReader();
                 SqlDataAdapter miada;
                 miada = new SqlDataAdapter(cmd);
                 miada.Fill(dts, "ubigeo");
@@ -108,6 +107,7 @@ namespace LeonComputing_ADO
             {
                 throw new Exception(ex.Message);
             }
+            finally { con.connClose(); }
         }
 
 
